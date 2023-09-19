@@ -20,15 +20,15 @@ struct BView: View {
             Text("\(secondsRemaining)")
                 .font(.largeTitle)
                 .onReceive(timer){_ in
-                    if self.isTimerRunning && self.secondsRemaining > 0{
-                        self.secondsRemaining -= 1
-                    } else if self.secondsRemaining > 0{
-                        self.isTimerRunning = false
-                    } else if self.isTimerRunning {
-                        self.isTimerRunning = false
+                    if isTimerRunning && secondsRemaining > 0{
+                        secondsRemaining -= 1
+                    } else if secondsRemaining > 0{
+                        isTimerRunning = false
+                    } else if isTimerRunning {
+                        isTimerRunning = false
                     } else {
-                        self.isTimerRunning = false                    
-                        self.secondsRemaining = self.secondsFirst
+                        isTimerRunning = false
+                        secondsRemaining = secondsFirst
                         //                        secondsRemaining = secondsFirst
                     }
                 }
